@@ -20,38 +20,36 @@
    Дан массив, сдвинуть его вправо на k шагов (за O(n) времени и O(1) памяти).
 """
 
-# 1. Проверка палиндрома
-
 # 1 Вариант (требует больше памяти, так как используеся доп место под переменную)
 
-# def polindrom_1(str_1: str) -> bool:
-#     string_reversed = str_1[::-1]
-#
-#     return str_1 == string_reversed
-#
-# print(polindrom_1(input("Введите проверочную строку: ")))
-#
-# # 2 Вариант (Оптимизированный - не понимаю, в таком случае все ли буквы проверены)
-#
-# def palindrom_2(str_2: str) -> bool:
-#
-#     if str_2 == str_2[::-1]:
-#         return True
-#     else:
-#         return False
-#
-#
-# print(palindrom_2("kok"))
-#
-# # 3 Вариант (Сложные строки)
-#
-# def palindrom_3(str_3: str) -> bool:
-#
-#     filtered_string = "".join(filter(str.isalnum, str_3)).lower()
-#
-#     return filtered_string == filtered_string[::-1]
-#
-# print(palindrom_3("A man, a plan, a canal: Panama"))
+def polindrom_1(str_1: str) -> bool:
+    string_reversed = str_1[::-1]
+
+    return str_1 == string_reversed
+
+print(polindrom_1(input("Введите проверочную строку: ")))
+
+# 2 Вариант (Оптимизированный - не понимаю, в таком случае все ли буквы проверены)
+
+def palindrom_2(str_2: str) -> bool:
+
+    if str_2 == str_2[::-1]:
+        return True
+    else:
+        return False
+
+
+print(palindrom_2("kok"))
+
+# 3 Вариант (Сложные строки)
+
+def palindrom_3(str_3: str) -> bool:
+
+    filtered_string = "".join(filter(str.isalnum, str_3)).lower()
+
+    return filtered_string == filtered_string[::-1]
+
+print(palindrom_3("A man, a plan, a canal: Panama"))
 
 # 4 Вариант (Сложный)
 
