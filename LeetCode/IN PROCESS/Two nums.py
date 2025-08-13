@@ -38,4 +38,4 @@ for i_index, i in enumerate(sorted_list):
 
 print(indexes)
 
-
+# Здесь надо переписать решение в виде класса и загрузить в литкод
