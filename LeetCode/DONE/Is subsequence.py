@@ -26,8 +26,8 @@ for i in s:
 
 if len(result) == len(s):
     if indexes_chars == sorted(indexes_chars):
-        print(result)
-        print(indexes_chars)
+        # print(result)
+        # print(indexes_chars)
         print(True)
     else:
         print(False)

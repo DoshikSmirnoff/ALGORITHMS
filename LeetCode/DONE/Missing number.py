@@ -21,3 +21,13 @@ n = 2 since there are 2 numbers, so all numbers are in the range [0,2].
 2 is the missing number in the range since it does not appear in nums.
 """
 
+nums = [3, 0, 1] # 2
+
+for i in range(len(nums) + 1):
+    if i in nums:
+        continue
+    else:
+        print(i)
+        break
+
+# Здесь надо переписать решение в виде класса и загрузить в литкод
