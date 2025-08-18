@@ -27,41 +27,16 @@ Input: s = "([)]"
 Output: false
 """
 
-components_of_string = ["(", "{", "[", ")", "}", "]"]
-
-# print(ord("(")) - 40
-# print(ord("{")) - 123
-# print(ord("[")) - 91
-# print(ord(")")) - 41
-# print(ord("}")) - 125
-# print(ord("]")) - 93
-
-# s = input("Введите строку, состоящую из допустимых символов: ")
-s = "[]"
-
-class PersonalError(Exception):
-    pass
-
-if len(s) > 1:
-    for char in s:
-        if char in components_of_string:
-            if char in components_of_string[0:3]:
-                if len(s) % 2 == 0:
-                    if len(s) == 2 and (ord(s[0]) == (ord(s[-1]) + 2 or 1)): # ? как сделать привязку к первому символу?
-                        print(True)
-                        break
-                        # if len(s) > 2 - как определить порядок скобок
-                    else:
-                        print(False)
-                else:
-                    raise PersonalError("Your len of string must be even!")
-            else:
-                print(False)
-
-        else:
-            raise PersonalError("Your string have incorrect character!")
-else:
-    raise PersonalError("Your string must contains 2 and more characters!")
-
-# Может попробовать решить через словари?...
+def check_correct(string: str) -> bool:
+    stack = []
+    for char in string:
+        if char in dict_of_string:  # открывающая скобка
+            stack.append(char)
+        else:  # закрывающая скобка
+            if not stack:  # нет открытой скобки для закрытия
+                return False
+            last_open = stack.pop()
+            if dict_of_string[last_open] != char:
+                return False
+    return not stack  # стек должен быть пустым
 
